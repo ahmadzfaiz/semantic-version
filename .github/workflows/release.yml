@@ -4,8 +4,6 @@ on:
   push:
     branches:
       - main
-      - "feature/*"
-      - "release/*"
 
 jobs:
   release:
@@ -23,30 +21,28 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Cache Dependencies
-        uses: actions/cache@v3
-        with:
-          path: ~/.cache/pip
-          key: ${{ runner.os }}-pip-${{ hashFiles('**/pyproject.toml') }}
-          restore-keys: |
-            ${{ runner.os }}-pip-
-
       - name: Install Dependencies
         run: |
           pip install python-semantic-release
 
-      - name: Run Semantic Release
+      - name: Run Semantic Release (Versioning)
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
-          semantic-release publish || (echo "Semantic Release Failed!" && exit 1)
+          semantic-release version
 
-      - name: Commit and Push Changelog
+      - name: Commit and Push Version Updates
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
-          git add CHANGELOG.md
-          git commit -m "chore(release): update changelog [skip ci]" || echo "No changes to commit"
+          git add your_package/__init__.py CHANGELOG.md
+          git commit -m "chore(release): update version and changelog [skip ci]" || echo "No changes to commit"
           git push origin main || echo "No changes to push"
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
+
+      - name: Run Semantic Release (Publishing)
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        run: |
+          semantic-release publish
