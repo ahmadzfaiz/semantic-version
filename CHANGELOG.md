@@ -3,6 +3,30 @@
 
 ## v0.2.0 (2025-03-17)
 
+### Bug Fixes
+
+- Change version number placeholder
+  ([`19caba8`](https://github.com/ahmadzfaiz/semantic-version/commit/19caba8b5aee42769d8ff6b9e4242c6c15438d4d))
+
+### Chores
+
+- Add version placeholder
+  ([`262cf26`](https://github.com/ahmadzfaiz/semantic-version/commit/262cf266809e7000981aba4d0ca1828c20504309))
+
+- Change changelog
+  ([`b1bf3c4`](https://github.com/ahmadzfaiz/semantic-version/commit/b1bf3c443a39cbd211eac1415cb5efa35916844a))
+
+### Continuous Integration
+
+- Add permission
+  ([`1bebd80`](https://github.com/ahmadzfaiz/semantic-version/commit/1bebd80c8394614409a4f1370a778fc25d28f910))
+
+- Change the token
+  ([`d131595`](https://github.com/ahmadzfaiz/semantic-version/commit/d1315959bbc8a1e44a4047212dc7ba393cd3622e))
+
+- Fix CI/CD to update the version
+  ([`4afef9c`](https://github.com/ahmadzfaiz/semantic-version/commit/4afef9c9e5d0570c1e9135312d96b6a8b119b034))
+
 ### Features
 
 - Add new package with version number
