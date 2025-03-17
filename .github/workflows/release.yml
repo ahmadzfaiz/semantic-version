@@ -27,7 +27,7 @@ jobs:
 
       - name: Run Semantic Release (Versioning)
         env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           semantic-release version
 
@@ -39,10 +39,10 @@ jobs:
           git commit -m "chore(release): update version and changelog [skip ci]" || echo "No changes to commit"
           git push origin main || echo "No changes to push"
         env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Run Semantic Release (Publishing)
         env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           semantic-release publish
