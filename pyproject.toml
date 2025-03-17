@@ -2,7 +2,10 @@
 branch = "main"
 version_scheme = "semver"
 version_source = "package"
-version_variables = ["package/__init__.py:__version__"]
+version_variables = [
+  "package/__init__.py:__version__",
+  "package/metadata.txt:version"
+]
 changelog_file = "CHANGELOG.md"
 commit_parser = "conventional"
 commit_author = "github-actions <actions@github.com>"
