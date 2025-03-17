@@ -1,0 +1,13 @@
+[tool.semantic_release]
+version_source = "commit"
+branch = "main"
+version_scheme = "semver"
+changelog_file = "CHANGELOG.md"
+commit_parser = "angular"
+commit_author = "github-actions <actions@github.com>"
+hvcs = "github"
+upload_to_pypi = false  # Set to true if releasing to PyPI
+upload_to_repository = true  # Pushes the updated version & tags
+
+[tool.semantic_release.branches.main]
+prerelease = false
