@@ -37,3 +37,14 @@ jobs:
           export GH_TOKEN=$GITHUB_TOKEN
           semantic-release version
           semantic-release publish
+
+      - name: Update metadata.txt
+        run: python -m update_metadata
+  
+      - name: Commit updated metadata.txt
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "actions@github.com"
+          git add metadata.txt
+          git commit -m "chore: update metadata.txt with new version" || echo "No changes to commit"
+          git push origin main

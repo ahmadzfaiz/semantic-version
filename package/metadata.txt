@@ -1,5 +1,6 @@
 [general]
-name=HelloWorld
+name=Hello World
 description=Testing
 about=This tool still in development!
 version=0.4
+author=John Doe
