@@ -1,6 +1,14 @@
 # CHANGELOG
 
 
+## v0.2.0 (2025-03-17)
+
+### Features
+
+- Add new package with version number
+  ([`bb01f23`](https://github.com/ahmadzfaiz/semantic-version/commit/bb01f23a13715dc941fa8770fd378d9a61d0085b))
+
+
 ## v0.1.0 (2025-03-17)
 
 ### Chores
