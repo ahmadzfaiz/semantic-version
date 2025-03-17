@@ -1,6 +1,19 @@
 # CHANGELOG
 
 
+## v0.2.1 (2025-03-17)
+
+### Bug Fixes
+
+- Force version bump
+  ([`dd4f0a2`](https://github.com/ahmadzfaiz/semantic-version/commit/dd4f0a21605617407b49011dcc80c84cad0be3db))
+
+### Build System
+
+- Make version in init changed on release
+  ([`df823f6`](https://github.com/ahmadzfaiz/semantic-version/commit/df823f68304c51fab06655a4ab1f4a54a6e71955))
+
+
 ## v0.2.0 (2025-03-17)
 
 ### Bug Fixes
@@ -26,6 +39,9 @@
 
 - Fix CI/CD to update the version
   ([`4afef9c`](https://github.com/ahmadzfaiz/semantic-version/commit/4afef9c9e5d0570c1e9135312d96b6a8b119b034))
+
+- Revise ci
+  ([`7fe8f89`](https://github.com/ahmadzfaiz/semantic-version/commit/7fe8f896ed541b0f17b98cd302d7012924f52ce5))
 
 ### Features
 
