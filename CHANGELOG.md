@@ -1,6 +1,14 @@
 # CHANGELOG
 
 
+## v0.2.3 (2025-03-17)
+
+### Bug Fixes
+
+- Force version bump for metadata
+  ([`893ed28`](https://github.com/ahmadzfaiz/semantic-version/commit/893ed28f0d62a51843fb7cacdb77a5a53b0e26db))
+
+
 ## v0.2.2 (2025-03-17)
 
 ### Bug Fixes
@@ -9,6 +17,9 @@
   ([`8867205`](https://github.com/ahmadzfaiz/semantic-version/commit/88672052cefd5615fe333b4d1277e486a0af18a3))
 
 ### Chores
+
+- Add metadata.txt and setup the version
+  ([`f56e699`](https://github.com/ahmadzfaiz/semantic-version/commit/f56e69936ec4076873c4f6c057283bc1f4282bd1))
 
 - Update version in init when there are new release
   ([`ef81df1`](https://github.com/ahmadzfaiz/semantic-version/commit/ef81df1379910f1f78cdb0d071d166e5af1187c7))
