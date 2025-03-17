@@ -4,26 +4,49 @@ on:
   push:
     branches:
       - main
-  workflow_dispatch:
+      - "feature/*"
+      - "release/*"
 
 jobs:
   release:
+    name: Semantic Release
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout repository
+      - name: Checkout Repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
-          python-version: "3.9"
+          python-version: '3.12'
 
-      - name: Install dependencies
-        run: pip install python-semantic-release
+      - name: Cache Dependencies
+        uses: actions/cache@v3
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/pyproject.toml') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+
+      - name: Install Dependencies
+        run: |
+          pip install python-semantic-release
 
       - name: Run Semantic Release
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
-        run: semantic-release publish
+        run: |
+          semantic-release publish || (echo "Semantic Release Failed!" && exit 1)
+
+      - name: Commit and Push Changelog
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+          git add CHANGELOG.md
+          git commit -m "chore(release): update changelog [skip ci]" || echo "No changes to commit"
+          git push origin main || echo "No changes to push"
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
